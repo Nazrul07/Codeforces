@@ -1,0 +1,51 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,q,l,r,pos,i;
+    string str,qer;
+    cin>>n>>q;
+    cin>>str;
+    while(q--)
+    {
+        cin>>qer;
+        if(qer=="pop_back")
+            str.pop_back();
+        else if(qer=="front")
+            cout<<str.front()<<endl;
+        else if(qer=="back")
+            cout<<str.back()<<endl;
+        else if(qer=="sort")
+        {
+            cin>>l>>r;
+            sort(str.begin()+min(l,r)-1,str.begin()+max(l,r));
+        }
+        else if(qer=="reverse")
+        {
+            cin>>l>>r;
+            reverse(str.begin()+min(l,r)-1,str.begin()+max(l,r));
+        }
+        else if(qer=="print")
+        {
+            cin>>pos;
+            cout<<str[pos-1]<<endl;
+        }
+        else if(qer=="substr")
+        {
+            cin>>l>>r;
+            for(i=min(l,r)-1; i<max(l,r); i++)
+            {
+                cout<<str[i];
+            }
+            cout<<endl;
+        }
+        else
+        {
+            char c;
+            cin>>c;
+            str.push_back(c);
+        }
+    }
+    return 0;
+}

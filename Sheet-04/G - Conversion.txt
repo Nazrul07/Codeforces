@@ -1,0 +1,27 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int l,i;
+    string s;
+    char c;
+    getline(cin,s);
+    l=s.size();
+    for(i=0 ; i<l ; i++)
+    {
+        if(s[i]==',')
+            cout<<" ";
+        else if(s[i]>='a' && s[i]<='z')
+        {
+            c=s[i]-32;
+            cout<<c;
+        }
+        else if(s[i]>='A' && s[i]<='Z')
+        {
+            c=s[i]+32;
+            cout<<c;
+        }
+    }
+    return 0;
+}

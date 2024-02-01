@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char s[10001],s1[10001];
+    scanf("%s",&s);
+    strcpy(s1,s);
+    strrev(s1);
+    if(strcmp(s,s1)==0)printf("YES");
+    else printf("NO");
+    return 0;
+}

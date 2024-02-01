@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<string.h>
+int min(int x,int y)
+{
+    if(x>y)return y;
+    else return x;
+}
+int main()
+{
+    int i,l1,l2,l,k=0;
+    char s1[21],s2[21];
+    scanf("%s%s",&s1,&s2);
+    l1=strlen(s1);
+    l2=strlen(s2);
+    l=min(l1,l2);
+    for(i=0 ; i<l ; i++)
+    {
+        if(s1[i]>s2[i])
+        {
+            printf("%s",s2);
+            k=1;
+            break;
+        }
+        if(s1[i]<s2[i])
+        {
+            printf("%s",s1);
+            k=1;
+            break;
+        }
+    }
+    if(k==0)
+    {
+        if(l1<=l2)
+            printf("%s",s1);
+        else
+            printf("%s",s2);
+    }
+    return 0;
+}

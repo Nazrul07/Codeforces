@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,sum=0,i;
+    cin>>n;
+    vector<char>s;
+    for(i=0 ; i<n ; i++)
+    {
+        char c;
+        cin>>c;
+        s.push_back(c);
+    }
+    for(int i=0 ; i<n ; i++)
+    {
+        if(s[i]=='V')
+            sum=sum+5;
+        else if(s[i]=='W')
+            sum=sum+2;
+        else if(s[i]=='X')
+            i++;
+        else if(s[i]=='Y')
+        {
+            s.push_back(s[i+1]);
+            i++;
+            n++;
+        }
+        else if(s[i]=='Z')
+        {
+            if(s[i+1]=='V')
+            {
+                sum=sum/5;
+                i++;
+            }
+            else if(s[i+1]=='W')
+            {
+                sum=sum/2;
+                i++;
+            }
+        }
+    }
+    cout<<sum<<endl;
+    return 0;
+}

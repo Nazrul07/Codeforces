@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int i,l,j,count=0;
+    char c,temp;
+    string str;
+    cin>>str;
+    l=str.size();
+    sort(str.begin()+0,str.begin()+l);
+    for(i=0 ; i<l ; i++)
+    {
+        if(i==0) temp=str[i];
+        if(temp==str[i])
+        {
+            count++;
+        }
+        else
+        {
+            cout<<temp<<" : "<<count<<endl;
+            temp=str[i];
+            count=1;
+        }
+        if(i==l-1)
+            cout<<temp<<" : "<<count<<endl;
+    }
+}

@@ -1,0 +1,26 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int t,l1,l2,Max;
+    cin>>t;
+    for(int i=0 ; i<t ; i++)
+    {
+        string s,s1;
+        cin>>s>>s1;
+        l1=s.size();
+        l2=s1.size();
+        Max=max(l1,l2);
+        for(int j=0 ; j<Max ; j++)
+        {
+            if(j>l2-1)
+                cout<<s[j];
+            else if(j>l1-1)
+                cout<<s1[j];
+            else
+                cout<<s[j]<<s1[j];
+        }
+        cout<<endl;
+    }
+}
