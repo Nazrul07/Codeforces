@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,m,p,q,kk=0,i,j,k;
+    cin>>n>>m;
+    int a[n][m];
+    for(i=0 ; i<n ; i++)
+    {
+        for(j=0 ; j<m ; j++)
+        {
+            cin>>a[i][j];
+        }
+    }
+    cin>>p>>q;
+    int arr[p][q];
+    int mul[n][q];
+    for(i=0 ; i<p ; i++)
+    {
+        for(j=0 ; j<q ; j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+
+   for(i=0 ; i<n ; i++)
+   {
+       for(j=0 ; j<q ; j++)
+       {
+           mul[i][j]=0;
+       }
+   }
+   for(i=0 ; i<n ; i++)
+   {
+       for(j=0  ; j<q ; j++)
+       {
+           for(k=0 ; k<m ; k++)
+           {
+               mul[i][j]+=a[i][k]*arr[k][j];
+           }
+       }
+   }
+   for(i=0 ; i<n ; i++)
+   {
+       for(j=0 ; j<q ; j++)
+       {
+           cout<<mul[i][j]<<" ";
+       }
+       cout<<endl;
+   }
+}

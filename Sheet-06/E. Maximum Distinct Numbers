@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long a,p=1,n,k,kk;
+    cin>>a;
+    k=sqrt(a);
+    kk=k*(k+1)/2;
+    if(kk<a)
+    {
+        p=k;
+    }
+    while(1)
+    {
+        n=p*(p+1)/2;
+        if(n>a)
+        {
+            break;
+        }
+        p++;
+    }
+    cout<<p-1<<endl;
+    return 0;
+}

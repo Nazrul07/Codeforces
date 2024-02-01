@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n,i,sum=0,k,s;
+    cin>>n;
+    for(i=1 ; i<=sqrt(n) ; i++)
+    {
+        if(n%i==0)
+        {
+            k=n/i;
+        if(k==i)
+            sum=sum+k;
+        else
+            sum=sum+k+i;
+        }
+    }
+    cout<<sum<<endl;
+    return 0;
+}
