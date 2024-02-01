@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+void rec(int a)
+{
+    if(a!=1)
+        rec(a-1);
+    cout<<a<<endl;
+}
+int main()
+{
+    int n,N;
+    cin>>n;
+    rec(n);
+    return 0;
+}

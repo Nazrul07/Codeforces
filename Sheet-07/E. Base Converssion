@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+void rec(int x=0)
+{
+  if(x==0) return;
+  rec(x/2);
+  cout<<x%2;
+}
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  int t;
+  cin>>t;
+  while(t--)
+  {
+    int n;
+    cin>>n;
+    rec(n);
+    cout<<endl;
+  }
+  return 0;
+}

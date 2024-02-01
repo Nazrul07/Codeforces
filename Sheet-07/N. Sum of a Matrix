@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int arr1[100][100],arr2[100][100],res[100][100];
+void rec(int n,int m,int temp)
+{
+    m--;
+    if(m==-1)
+    {
+        m=temp-1;
+        n--;
+    }
+    if(n==-1) return;
+    res[n][m]=arr1[n][m]+arr2[n][m];
+    rec(n,m,temp);
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n,m;
+    cin>>n>>m;
+    for(int i=0 ; i<n;  i++)
+    {
+        for(int j=0 ; j<m; j++)
+        {
+            cin>>arr1[i][j];
+        }
+    }
+    for(int i=0 ; i<n;  i++)
+    {
+        for(int j=0 ; j<m; j++)
+        {
+            cin>>arr2[i][j];
+        }
+    }
+    n--;
+    rec(n,m,m);
+    for(int i=0 ; i<n+1;  i++)
+    {
+        for(int j=0 ; j<m; j++)
+        {
+            cout<<res[i][j]<<" ";
+        }cout<<endl;
+    }
+return 0;
+}

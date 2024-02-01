@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+void rec(int arr[],int x,int n)
+{
+    x--;
+    if(x==(n/2)-1)
+    {
+        cout<<"YES"<<endl;
+        return;
+    }
+    if(arr[x]!=arr[n-x-1])
+    {
+        cout<<"NO"<<endl;
+        return;
+    }
+    return rec(arr,x,n);
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0 ; i<n ; i++)
+    {
+        cin>>a[i];
+    }
+    rec(a,n,n);
+return 0;
+}

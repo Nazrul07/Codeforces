@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int res=0,index=-1;
+void rec(string s)
+{
+  index++;
+  if(index==s.size())
+  {
+    return;
+  }
+  if(s[index]=='a' || s[index]=='A' || s[index]=='e' || s[index]=='E' || s[index]=='I' || s[index]=='i' || s[index]=='o' || s[index]=='O' || s[index]=='u' || s[index]=='U')
+  {
+    res++;
+  }
+  return rec(s);
+}
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  string s;
+  getline(cin,s);
+  rec(s);
+  cout<<res<<endl;
+  return 0;
+}

@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int Max,Index=-1;
+void rec(int a[],int x)
+{
+    Index++;
+    if(Index==x)
+    {
+        return;
+    }
+    else
+    {
+     if(a[Index]>Max)
+     {
+        Max=a[Index];
+     }
+    }
+    rec(a,x);
+}
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0 ; i<n ; i++)
+    {
+        cin>>arr[i];
+    }
+    Max=arr[0];
+    rec(arr,n);
+    cout<<Max<<endl;
+    return 0;
+}

@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+int x;
+void rec(int n)
+{
+  if(n==0) return;
+  rec(n-1);
+  for(int i=1 ; i<=x-n ; i++)
+  {
+    cout<<" ";
+  }
+  for(int i=1 ; i<=2*n-1 ; i++)
+  {
+    cout<<"*";
+  }
+  cout<<endl;
+}
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  int n;
+  cin>>n;
+  x=n;
+  rec(n);
+  return 0;
+}

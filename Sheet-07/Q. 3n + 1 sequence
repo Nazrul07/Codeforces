@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+ll cnt=1;
+void rec(ll n)
+{
+    if(n==1)
+    {
+        cout<<cnt<<endl;
+        return;
+    }
+    if(n%2==0)
+    {
+        cnt++;
+        rec(n/2);
+    }
+    else
+    {
+        cnt++;
+        rec(3*n+1);
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll n;
+    cin>>n;
+    rec(n);
+return 0;
+}
