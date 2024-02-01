@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char ch;
+    cin>>ch;
+    int test,i,a,j;
+    cin>>test;
+    for(i=1 ; i<=test ; i++)
+    {
+        cin>>a;
+        for(j=1 ; j<=a ; j++)
+        {
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+    return 0;
+}

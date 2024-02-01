@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int test,i,a,b,j,Max,Min;
+    cin>>test;
+    for(i=1 ; i<=test ; i++)
+    {
+        int sum=0;
+        cin>>a>>b;
+        Min=min(a,b);
+        Max=max(a,b);
+        for(j=Min+1 ; j<Max ; j++)
+        {
+            if(j%2!=0)
+                sum=sum+j;
+        }
+        cout<<sum<<endl;
+    }
+    return 0;
+}

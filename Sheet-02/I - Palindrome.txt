@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+int main()
+{
+    char str[100];
+    int l,k=0,i,sum=0,s=1;
+    cin>>str;
+    l=strlen(str)-1;
+    for(i=0 ; i<=l ; i++)
+    {
+        if(str[i] != str[l-i])
+        {
+            k=1;
+            break;
+        }
+    }
+    if(k==1)
+    {
+        for(i=0 ; i<=l ; i++)
+        {
+            int kk=str[i]-48;
+            sum=kk*s+sum;
+            s=s*10;
+        }
+        cout<<sum<<endl<<"NO";
+    }
+    else
+        cout<<str<<endl<<"YES";
+    return 0;
+}

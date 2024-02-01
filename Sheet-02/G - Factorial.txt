@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,x,i,j;
+    long long  mul=1;
+    cin>>n;
+    for(i=1 ; i<=n ; i++)
+    {
+        cin>>x;
+        for(j=1 ; j<=x ; j++)
+            mul=mul*j;
+        cout<<mul<<endl;
+        mul=1;
+    }
+    return 0;
+}

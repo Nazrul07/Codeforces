@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,a,b,i,m,s=0,rem;
+    cin>>n>>a>>b;
+    for(i=1 ; i<=n ; i++)
+    {
+        int sum=0;
+        m=i;
+        while(m!=0)
+        {
+            rem=m%10;
+            m=m/10;
+            sum=sum+rem;
+        }
+        if(sum>=a && sum<=b)
+            s=s+i;
+    }
+    cout<<s;
+    return 0;
+}

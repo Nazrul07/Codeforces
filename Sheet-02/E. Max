@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,a,i,Max;
+    cin>>n;
+    for(i=1 ; i<=n ; i++)
+    {
+        cin>>a;
+        if(i==1)
+            Max=a;
+        if(Max<a)
+            Max=a;
+    }
+    cout<<Max;
+    return 0;
+}
