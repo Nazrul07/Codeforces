@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int knapsack(int w,int weight[], int price[] , int n)
+{
+    if(n==0 || w==0) return 0;
+
+    if(weight[n-1]>w)
+    {
+        return knapsack(w,weight,price,n-1);
+    }
+    else
+    {
+        return max(price[n-1]+knapsack(w-weight[n-1],weight,price,n-1),knapsack(w,weight,price,n-1));
+    }
+}
+void solve()
+{
+    int n,w;
+    cin>>n>>w;
+    int weight[n],price[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>weight[i]>>price[i];
+    }
+    cout<<knapsack(w,weight,price,n)<<endl;
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    solve();
+    return 0;
+}
